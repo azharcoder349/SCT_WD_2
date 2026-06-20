@@ -1,0 +1,234 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f172a;
+    overflow:hidden;
+    color:white;
+}
+
+/* Background Circles */
+
+.bg-circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+.circle1{
+    width:300px;
+    height:300px;
+    background:#06b6d4;
+    top:-80px;
+    left:-80px;
+}
+
+.circle2{
+    width:300px;
+    height:300px;
+    background:#8b5cf6;
+    bottom:-80px;
+    right:-80px;
+}
+
+/* Container */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* Glass Card */
+
+.stopwatch-card{
+    width:100%;
+    max-width:550px;
+    padding:35px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.stopwatch-card h1{
+    margin-bottom:25px;
+    font-size:2rem;
+}
+
+.stopwatch-card h1 i{
+    color:#38bdf8;
+}
+
+/* Circular Timer */
+
+.timer-container{
+    display:flex;
+    justify-content:center;
+    margin:25px 0;
+}
+
+.outer-circle{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #38bdf8,
+        #8b5cf6
+    );
+    animation:glow 3s infinite;
+}
+
+.inner-circle{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#display{
+    font-size:2rem;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+@keyframes glow{
+
+    0%{
+        box-shadow:0 0 15px #38bdf8;
+    }
+
+    50%{
+        box-shadow:
+        0 0 30px #38bdf8,
+        0 0 50px #8b5cf6;
+    }
+
+    100%{
+        box-shadow:0 0 15px #38bdf8;
+    }
+}
+
+/* Buttons */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-top:20px;
+}
+
+.btn{
+    border:none;
+    padding:12px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.start{
+    background:#22c55e;
+}
+
+.pause{
+    background:#f59e0b;
+}
+
+.reset{
+    background:#ef4444;
+}
+
+.lap{
+    background:#3b82f6;
+}
+
+/* Lap Section */
+
+.lap-section{
+    margin-top:30px;
+    text-align:left;
+}
+
+.lap-section h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#laps{
+    max-height:220px;
+    overflow-y:auto;
+    list-style:none;
+}
+
+#laps li{
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+/* Scrollbar */
+
+#laps::-webkit-scrollbar{
+    width:6px;
+}
+
+#laps::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:10px;
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .outer-circle{
+        width:220px;
+        height:220px;
+    }
+
+    .inner-circle{
+        width:185px;
+        height:185px;
+    }
+
+    #display{
+        font-size:1.6rem;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .stopwatch-card{
+        padding:25px;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Stopwatch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Effects -->
+    <div class="bg-circle circle1"></div>
+    <div class="bg-circle circle2"></div>
+
+    <div class="container">
+
+        <div class="stopwatch-card">
+
+            <h1>
+                <i class="fa-solid fa-stopwatch"></i>
+                Stopwatch
+            </h1>
+
+            <!-- Circular Timer -->
+
+            <div class="timer-container">
+
+                <div class="outer-circle">
+
+                    <div class="inner-circle">
+
+                        <span id="display">
+                            00:00:00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="buttons">
+
+                <button id="startBtn" class="btn start">
+                    <i class="fa-solid fa-play"></i>
+                    Start
+                </button>
+
+                <button id="pauseBtn" class="btn pause">
+                    <i class="fa-solid fa-pause"></i>
+                    Pause
+                </button>
+
+                <button id="resetBtn" class="btn reset">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset
+                </button>
+
+                <button id="lapBtn" class="btn lap">
+                    <i class="fa-solid fa-flag"></i>
+                    Lap
+                </button>
+
+            </div>
+
+            <!-- Lap Section -->
+
+            <div class="lap-section">
+
+                <h2>Lap Times</h2>
+
+                <ul id="laps"></ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
